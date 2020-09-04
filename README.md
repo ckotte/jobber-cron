@@ -1,10 +1,6 @@
 # Dockerized Jobber Cron
 
-[![Open Issues](https://img.shields.io/github/issues/blacklabelops/jobber-cron.svg)](https://github.com/blacklabelops/jobber-cron/issues)
-[![Stars on GitHub](https://img.shields.io/github/stars/blacklabelops/jobber-cron.svg)](https://github.com/cblacklabelops/jobber-cron/stargazers)
-[![Docker Stars](https://img.shields.io/docker/stars/blacklabelops/jobber.svg)](https://hub.docker.com/r/blacklabelops/jobber/) [![Docker Pulls](https://img.shields.io/docker/pulls/blacklabelops/jobber.svg)](https://hub.docker.com/r/blacklabelops/jobber/)
-
-> Docker Container Cron Alternative With Jobber.
+Docker Container Cron Alternative With Jobber.
 
 ## Supported tags and respective Dockerfile links
 
@@ -123,14 +119,6 @@ As a reminder, cron timetable is like follows:
 1. Token: Day of Month
 1. Token: Month
 1. Token: Day of Week
-
-# Support
-
-Leave a message and ask questions on Hipchat: [blacklabelops/hipchat](http://support.blacklabelops.com)
-
-Maybe no one has ever told you, but munich developers run on beer! If you like my work, share a beer!
-
-[![BeerMe](https://raw.githubusercontent.com/ikkez/Beer-Donation-Button/gh-pages/img/beer_donation_button_single.png)](https://www.paypal.me/donateblacklabelops)
 
 # References
 
