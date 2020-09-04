@@ -1,4 +1,4 @@
-FROM blacklabelops/jobber
+FROM ckotte/jobber:1.3.3
 MAINTAINER Christian Kotte
 
 # Image Build Date By Buildsystem
