@@ -1,5 +1,5 @@
 FROM blacklabelops/alpine:3.8
-MAINTAINER Steffen Bleul <sbl@blacklabelops.com>
+MAINTAINER Christian Kotte
 
 # build parameters
 ARG JOBBER_VERSION=1.3.3

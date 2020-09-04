@@ -19,14 +19,14 @@ $ docker run -d --name cloudtask \
     -e "JOB_COMMAND1=docker ps" \
     -e "JOB_TIME1=1" \
     -e "JOB_ON_ERROR1=Backoff" \
-    blacklabelops/jobber:docker
+    ckotte/jobber:docker
 ~~~~
 
 > Will list your docker processes each minute.
 
 # How It Works
 
-This container is using blacklabelops/jobber for defining jobs. See this link for a comprehensive documentation: (blacklabelops/jobber)[https://github.com/blacklabelops/jobber-cron]
+This container is using ckotte/jobber for defining jobs. See this link for a comprehensive documentation: (ckotte/jobber)[https://github.com/ckotte/jobber-cron]
 
 # Docker
 
@@ -42,7 +42,7 @@ $ docker run -d \
     -e "JOB_COMMAND1=docker images" \
     -e "JOB_TIME1=1" \
     -e "JOB_ON_ERROR1=Backoff" \
-    blacklabelops/jobber:docker
+    ckotte/jobber:docker
 ~~~~
 
 > Will list local image list every minute.
@@ -66,10 +66,10 @@ $ docker run -d \
     -e "DOCKER_REGISTRY_EMAIL=**Your_Account_Email**" \
     -e "DOCKER_REGISTRY_PASSWORD=**Your_Account_Password**" \
     -e "JOB_NAME1=TestEcho" \
-    -e "JOB_COMMAND1=docker push blacklabelops/centos" \
+    -e "JOB_COMMAND1=docker push ckotte/centos" \
     -e "JOB_TIME1=1" \
     -e "JOB_ON_ERROR1=Backoff" \
-    blacklabelops/jobber:docker
+    ckotte/jobber:docker
 ~~~~
 
 > Will push the container to dockerhub every minute.
@@ -88,10 +88,10 @@ $ docker run -d \
     -e "DOCKER_REGISTRY_EMAIL=**Your_Account_Email**" \
     -e "DOCKER_REGISTRY_PASSWORD=**Your_Account_Password**" \
     -e "JOB_NAME1=TestEcho" \
-    -e "JOB_COMMAND1=docker push quay.io/blacklabelops/centos" \
+    -e "JOB_COMMAND1=docker push quay.io/ckotte/centos" \
     -e "JOB_TIME1=1" \
     -e "JOB_ON_ERROR1=Backoff" \
-    blacklabelops/jobber:docker
+    ckotte/jobber:docker
 ~~~~
 
 > Will push the container to quay.io every minute.

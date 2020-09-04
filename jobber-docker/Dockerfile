@@ -1,5 +1,5 @@
 FROM blacklabelops/jobber
-MAINTAINER Steffen Bleul <sbl@blacklabelops.com>
+MAINTAINER Christian Kotte
 
 # Image Build Date By Buildsystem
 ARG BUILD_DATE=undefined
