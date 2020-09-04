@@ -16,5 +16,5 @@ jobber:
     JOB_NOTIFY_ERR2: 'true'
 
   labels:
-    com.blacklabelops.description: "Jobber Cron Container"
-    com.blacklabelops.service: "jobberd"
+    com.opencontainers.description: "Jobber Cron Container"
+    com.opencontainers.service: "jobberd"

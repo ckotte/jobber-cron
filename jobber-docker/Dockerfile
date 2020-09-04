@@ -23,9 +23,9 @@ RUN apk add --update \
     rm -rf /var/cache/apk/* && rm -rf /tmp/* && rm -rf /var/log/*
 
 # Image Metadata
-LABEL com.blacklabelops.application.jobber-docker.docker.version=$DOCKER_VERSION \
-      com.blacklabelops.application.jobber-docker.docker-machine.version=$DOCKER_MACHINE_VERSION \
-      com.blacklabelops.image.builddate.jobber-docker=${BUILD_DATE}
+LABEL com.opencontainers.application.jobber-docker.docker.version=$DOCKER_VERSION \
+      com.opencontainers.application.jobber-docker.docker-machine.version=$DOCKER_MACHINE_VERSION \
+      com.opencontainers.image.builddate.jobber-docker=${BUILD_DATE}
 
 COPY imagescripts /opt/cloud
 ENTRYPOINT ["/opt/cloud/docker-entrypoint.sh"]

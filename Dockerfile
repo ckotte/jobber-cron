@@ -43,8 +43,8 @@ RUN export JOBBER_HOME=/tmp/jobber && \
     rm -rf /var/cache/apk/* && rm -rf /tmp/* && rm -rf /var/log/*
 
 # Image Metadata
-LABEL com.blacklabelops.application.jobber.version=$JOBBER_VERSION \
-      com.blacklabelops.image.builddate.jobber=${BUILD_DATE}
+LABEL com.opencontainers.application.jobber.version=$JOBBER_VERSION \
+      com.opencontainers.image.builddate.jobber=${BUILD_DATE}
 
 COPY docker-entrypoint.sh /opt/jobber/docker-entrypoint.sh
 ENTRYPOINT ["/sbin/tini","--","/opt/jobber/docker-entrypoint.sh"]

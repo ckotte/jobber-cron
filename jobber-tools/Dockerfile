@@ -36,7 +36,7 @@ RUN apk add --update \
     rm -rf /var/log/*
 
 # Image Metadata
-LABEL com.blacklabelops.image.builddate.jobber-tools=${BUILD_DATE}
+LABEL com.opencontainers.image.builddate.jobber-tools=${BUILD_DATE}
 
 COPY imagescripts /opt/jobber-tools
 ENTRYPOINT ["/opt/jobber-tools/docker-entrypoint.sh"]
