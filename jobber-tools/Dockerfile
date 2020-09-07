@@ -8,7 +8,7 @@ USER root
 
 RUN apk add --update \
       gpgme \
-      gnupg1 \
+      gnupg \
       wget \
       jq \
       curl \

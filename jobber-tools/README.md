@@ -2,7 +2,7 @@
 
 Includes:
 
-* gpgme and gnupg1
+* gpgme and gnupg
 * wget and curl
 * tar, gzip, zip, and unzip
 * rsync
