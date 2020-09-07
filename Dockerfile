@@ -2,7 +2,7 @@ FROM alpine:3.12
 MAINTAINER Christian Kotte
 
 # build parameters
-ARG JOBBER_VERSION=1.3.4
+ARG JOBBER_VERSION=1.4.4
 # Image Build Date By Buildsystem
 ARG BUILD_DATE=undefined
 
@@ -33,8 +33,8 @@ RUN export JOBBER_HOME=/tmp/jobber && \
       rsync \
       grep && \
     # Compile and install Jobber
-    mkdir -p "/var/jobber/${CONTAINER_UID}" && chown -R $CONTAINER_UID:$CONTAINER_GID "/var/jobber/${CONTAINER_UID}" && \
-    mkdir -p "/var/jobber/0" && \
+    mkdir -p "/usr/local/var/jobber/${CONTAINER_UID}" && chown -R $CONTAINER_UID:$CONTAINER_GID "/usr/local/var/jobber/${CONTAINER_UID}" && \
+    mkdir -p "/usr/local/var/jobber/0" && \
     cd /tmp && \
     mkdir -p src/github.com/dshearer && \
     cd src/github.com/dshearer && \

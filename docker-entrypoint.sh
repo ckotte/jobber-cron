@@ -65,7 +65,7 @@ cat ${configfile}
 
 if [ "$1" = 'jobberd' ]; then
   # pipeEnvironmentVariables
-  exec /usr/local/libexec/jobberrunner ${configfile}
+  exec /usr/local/libexec/jobberrunner -u /usr/local/var/jobber/${EUID}/cmd.sock ${configfile}
 fi
 
 exec "$@"
