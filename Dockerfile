@@ -1,4 +1,4 @@
-FROM blacklabelops/alpine:3.8
+FROM alpine:3.12
 MAINTAINER Christian Kotte
 
 # build parameters
@@ -19,6 +19,11 @@ RUN export JOBBER_HOME=/tmp/jobber && \
       git \
       curl \
       wget \
+      bash \
+      su-exec \
+      gzip \
+      tar \
+      tini \
       tzdata \
       make \
       musl-dev \
