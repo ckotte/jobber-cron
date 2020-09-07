@@ -24,10 +24,10 @@ $ docker run -d --name jobber \
     -e "GPG_PUBLIC_KEY: "/backup/gpg/myown_public_key.asc" \
     -e "AUTO_TRUST_GPG_PUBLIC_KEY: "true" \
     -e "JOB_NAME1: "backup" \
-    -e "JOB_COMMAND1: "gpg-zip --encrypt --recipient "test" --output /cloud/test.tar.gz.gpg /backup/xyz/" \
+    -e "JOB_COMMAND1: "gpgtar --encrypt --recipient "test" --output /cloud/test.tar.gpg /backup/xyz/" \
     -e "JOB_TIME1: "0 0 2 * * *" \
     -e "JOB_ON_ERROR1: "Continue" \
     ckotte/jobber:tools
 ~~~~
 
-> Will compress and encrypt backup folder via gpg-zip each day at 2am.
+> Will compress and encrypt backup folder via gpgtar each day at 2am.
