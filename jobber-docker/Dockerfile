@@ -12,7 +12,10 @@ ENV DOCKER_MACHINE_VERSION=v0.13.0
 RUN apk add --update \
       gpgme \
       curl \
-      py-pip && \
+      py-pip \
+      python3-dev \
+      libffi-dev \
+      openssl-dev && \
     pip install --upgrade pip && \
     # Install docker
     curl -L -o /tmp/docker-${DOCKER_VERSION}.tgz https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz && \
