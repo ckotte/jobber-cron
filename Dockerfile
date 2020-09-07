@@ -13,8 +13,11 @@ RUN export JOBBER_HOME=/tmp/jobber && \
     export CONTAINER_GID=1000 && \
     export CONTAINER_USER=jobber && \
     export CONTAINER_GROUP=jobber && \
+    # Add user
+    addgroup -g $CONTAINER_GID $CONTAINER_USER && \
+    adduser -u $CONTAINER_UID -G $CONTAINER_GROUP -s /bin/bash -S $CONTAINER_USER && \
     # Install tools
-    apk add --update --no-cache --virtual .build-deps \
+    apk add --update --no-cache \
       go \
       git \
       curl \
@@ -30,22 +33,20 @@ RUN export JOBBER_HOME=/tmp/jobber && \
       rsync \
       grep && \
     # Compile and install Jobber
-    addgroup -g $CONTAINER_GID $CONTAINER_USER && \
-    adduser -u $CONTAINER_UID -G $CONTAINER_GROUP -s /bin/bash -S $CONTAINER_USER && \
     mkdir -p "/var/jobber/${CONTAINER_UID}" && chown -R $CONTAINER_UID:$CONTAINER_GID "/var/jobber/${CONTAINER_UID}" && \
     mkdir -p "/var/jobber/0" && \
     cd /tmp && \
     mkdir -p src/github.com/dshearer && \
     cd src/github.com/dshearer && \
-    #git clone https://github.com/dshearer/jobber.git && \
-    git clone https://github.com/ckotte/jobber.git && \
+    git clone https://github.com/dshearer/jobber.git && \
     cd jobber && \
     git checkout v${JOBBER_VERSION} && \
     make check && \
     make install && \
-    # Cleanup
-    apk del .build-deps && \
-    rm -rf /var/cache/apk/* && rm -rf /tmp/* && rm -rf /var/log/*
+    # Clean caches and tmps
+    rm -rf /var/cache/apk/*                         &&  \
+    rm -rf /tmp/*                                   &&  \
+    rm -rf /var/log/*
 
 # Image Metadata
 LABEL com.opencontainers.application.jobber.version=$JOBBER_VERSION \
