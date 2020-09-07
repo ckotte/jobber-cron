@@ -22,6 +22,7 @@ $ docker run -d --name jobber \
     -v /some/directory:/backup
     -v /cloud/sync/directory:/cloud
     -e "GPG_PUBLIC_KEY=/backup/gpg/myown_public_key.asc" \
+    -e "GPG_PUBLIC_KEY_ID=ABCDEFGH" \
     -e "AUTO_TRUST_GPG_PUBLIC_KEY=true" \
     -e "JOB_NAME1=backup" \
     -e "JOB_COMMAND1=gpgtar --encrypt --recipient "test" --output /cloud/test.tar.gpg /backup/xyz/" \
@@ -31,3 +32,4 @@ $ docker run -d --name jobber \
 ~~~~
 
 > Will compress and encrypt backup folder via gpgtar each day at 2am.
+> You can use the fingerprint, the long key ID or the short key ID as the public key ID
