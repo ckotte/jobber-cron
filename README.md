@@ -4,9 +4,11 @@ Docker container cron alternative with jobber.
 
 ## Supported tags and respective Dockerfile links
 
-| Jobber  | latest, v1.3.4 | latest, v1.3.4 | [Dockerfile](https://github.com/ckotte/jobber-cron/blob/master/Dockerfile) | [Readme](https://github.com/ckotte/jobber-cron/blob/master/README.md) | ckotte/jobber:latest
-| Jobber + Tools  | latest, v1.3.4 | tools, tools.v1.3.4 | [Dockerfile](https://github.com/ckotte/jobber-cron/blob/master/jobber-tools/Dockerfile) | | ckotte/jobber:tools |
-| Jobber + Docker Tools | latest, v1.3.4 | docker, docker.v1.3.4 | [Dockerfile](https://github.com/ckotte/jobber-cron/blob/master/jobber-docker/Dockerfile) | [Readme](https://github.com/ckotte/jobber-cron/blob/master/jobber-docker/README.md) | ckotte/jobber:docker |
+| Bundle | Version | Dockerfile | Readme |
+|--------|---------|------------|--------|
+| Jobber | 1.3.4 | [Dockerfile](https://github.com/ckotte/jobber-cron/blob/master/Dockerfile) | [Readme](https://github.com/ckotte/jobber-cron/blob/master/README.md) |
+| Jobber + Tools | 1.3.4 | [Dockerfile](https://github.com/ckotte/jobber-cron/blob/master/jobber-tools/Dockerfile) | [Readme](https://github.com/ckotte/jobber-cron/blob/master/jobber-tools/README.md) |
+| Jobber + Docker Tools | 1.3.4 | [Dockerfile](https://github.com/ckotte/jobber-cron/blob/master/jobber-docker/Dockerfile) | [Readme](https://github.com/ckotte/jobber-cron/blob/master/jobber-docker/README.md) |
 
 
 # Make It Short!
