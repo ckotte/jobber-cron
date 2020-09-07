@@ -20,7 +20,7 @@ RUN apk add --update \
     mv /tmp/docker/docker /usr/local/bin && \
     chmod +x /usr/local/bin/docker && \
     # Install docker-compose
-    pip install docker-compose docker-cloud && \
+    pip install docker-compose && \
     # Install docker-machine
     curl -L https://github.com/docker/machine/releases/download/${DOCKER_MACHINE_VERSION}/docker-machine-`uname -s`-`uname -m` > /usr/local/bin/docker-machine && \
     chmod +x /usr/local/bin/docker-machine && \
