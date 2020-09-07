@@ -1,4 +1,4 @@
-FROM ckotte/jobber:1.3.3
+FROM ckotte/jobber:1.3.4
 MAINTAINER Christian Kotte
 
 # Image Build Date By Buildsystem

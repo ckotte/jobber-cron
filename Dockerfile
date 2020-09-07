@@ -2,7 +2,7 @@ FROM alpine:3.12
 MAINTAINER Christian Kotte
 
 # build parameters
-ARG JOBBER_VERSION=1.3.3
+ARG JOBBER_VERSION=1.3.4
 # Image Build Date By Buildsystem
 ARG BUILD_DATE=undefined
 
