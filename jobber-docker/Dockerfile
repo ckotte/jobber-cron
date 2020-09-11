@@ -37,6 +37,6 @@ LABEL com.opencontainers.application.jobber-docker.docker.version=$DOCKER_VERSIO
       com.opencontainers.application.jobber-docker.docker-machine.version=$DOCKER_MACHINE_VERSION \
       com.opencontainers.image.builddate.jobber-docker=${BUILD_DATE}
 
-COPY imagescripts /opt/cloud
-ENTRYPOINT ["/opt/cloud/docker-entrypoint.sh"]
+COPY imagescripts /opt/jobber-docker
+ENTRYPOINT ["/opt/jobber-docker/docker-entrypoint.sh"]
 CMD ["jobberd"]
