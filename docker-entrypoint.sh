@@ -8,15 +8,6 @@ else
   configfile="/home/$(whoami)/.jobber"
 fi
 
-function pipeEnvironmentVariables() {
-  local environmentfile="/etc/profile.d/jobber.sh"
-  cat > ${environmentfile} <<_EOF_
-  #!/bin/sh
-_EOF_
-  sh -c export >> ${environmentfile}
-  sed -i.bak '/^export [a-zA-Z0-9_]*:/d' ${environmentfile}
-}
-
 if [ ! -f "${configfile}" ]; then
   touch ${configfile}
 
@@ -64,7 +55,6 @@ echo "${configfile}:"
 cat ${configfile}
 
 if [ "$1" = 'jobberd' ]; then
-  # pipeEnvironmentVariables
   exec /usr/local/libexec/jobberrunner -u /usr/local/var/jobber/${EUID}/cmd.sock ${configfile}
 fi
 
