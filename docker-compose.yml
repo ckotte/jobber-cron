@@ -1,20 +1,32 @@
-jobber:
-  build: .
-  container_name: jobber
-  environment:
-    JOBS_NOTIFY_CMD: tee /log.txt
-    JOB_NAME1: TestEcho
-    JOB_COMMAND1: echo hello world
-    JOB_TIME1: "*/45 * * * * *"
-    # JOB_ON_ERROR1: Backoff
-    # JOB_NOTIFY_ERR1: 'true'
-    # JOB_NOTIFY_FAIL1: 'true'
-    JOB_NAME2: TestFail
-    JOB_COMMAND2: cat 'hello world'
-    JOB_TIME2: "*/60 * * * * *"
-    JOB_ON_ERROR2: Backoff
-    JOB_NOTIFY_ERR2: 'true'
+version: '2.1'
 
-  labels:
-    com.opencontainers.description: "Jobber Cron Container"
-    com.opencontainers.service: "jobberd"
+services:
+  jobber:
+    build:
+      context: .
+    image: ckotte/jobber:1.4.4
+    user: jobber
+    container_name: jobber
+    hostname: jobber
+    environment:
+      # MAIL_SERVER:
+      # MAIL_SERVER_PORT:
+      # MAIL_ADDRESS:
+      # MAIL_PASSWORD:
+      JOB_NAME1: TestEcho
+      JOB_COMMAND1: echo hello world
+      JOB_TIME1: "*/45 * * * * *"
+      JOB_ON_ERROR1: Backoff
+      # JOB_NOTIFY_SUCC1: 'true'
+      JOB_NOTIFY_ERR1: 'true'
+      # JOB_NOTIFY_FAIL1: 'true'
+      JOB_NAME2: TestFail
+      JOB_COMMAND2: cat 'hello world'
+      JOB_TIME2: "*/60 * * * * *"
+      JOB_ON_ERROR2: Stop
+      JOB_NOTIFY_ERR2: 'true'
+      # JOB_NOTIFY_FAIL2: 'true'
+      # DEBUG: 'true'
+    labels:
+      com.opencontainers.description: "Jobber Cron Container"
+      com.opencontainers.service: "jobberd"
