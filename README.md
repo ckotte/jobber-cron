@@ -50,8 +50,6 @@ $ docker run -d \
 
 # Environment Variables
 
-Globally, there is a notify program defined, default one is `sendmail`, you can override it using an environment variable, `JOBS_NOTIFY_CMD`.  
-This program will receive a JSON payload as [specified in the jobber docs](https://dshearer.github.io/jobber/doc/v1.2/#error-handling)
 
 Every job definition is specified by up to four environment variables:
 
@@ -67,7 +65,6 @@ Full example:
 ~~~~
 $ docker run -d \
     --name jobber \
-    -e "JOBS_NOTIFY_CMD=/bin/bash" \
     -e "JOB_NAME1=TestEcho" \
     -e "JOB_COMMAND1=echo hello world" \
     -e "JOB_TIME1=1" \

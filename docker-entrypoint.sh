@@ -11,12 +11,6 @@ fi
 if [ ! -f "${configfile}" ]; then
   touch ${configfile}
 
-  if [ -n "${JOBS_NOTIFY_CMD}" ]; then
-    cat > ${configfile} <<_EOF_
-[prefs]
-  notifyProgram: ${JOBS_NOTIFY_CMD}
-_EOF_
-  fi
   cat >> ${configfile} <<_EOF_
 [jobs]
 _EOF_
