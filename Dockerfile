@@ -31,7 +31,13 @@ RUN export JOBBER_HOME=/tmp/jobber && \
       make \
       musl-dev \
       rsync \
-      grep && \
+      grep \
+      python3 \
+      jq \
+      msmtp \
+      ca-certificates && \
+    # Create sendmail symlink
+    ln -sf /usr/bin/msmtp /usr/sbin/sendmail && \
     # Compile and install Jobber
     mkdir -p "/usr/local/var/jobber/${CONTAINER_UID}" && chown -R $CONTAINER_UID:$CONTAINER_GID "/usr/local/var/jobber/${CONTAINER_UID}" && \
     mkdir -p "/usr/local/var/jobber/0" && \
