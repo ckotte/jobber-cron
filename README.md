@@ -55,10 +55,8 @@ Every job definition is specified by up to four environment variables:
 
 * JOB_NAME: The identifier for the job, must not contain empty spaces!
 * JOB_COMMAND: The bash command to be executed.
-* JOB_TIME: The cron schedule for the job. See [Documentation](http://dshearer.github.io/jobber/#defining-jobs)
-* JOB_ON_ERROR: How Jobber should act on errors. Values: Stop, Backoff, Continue (Default). See [Documentation](http://dshearer.github.io/jobber/#defining-jobs)
-* JOB_NOTIFY_ERR: If Jobber should notify on error. Values: `true`, `false`. Default is `false`
-* JOB_NOTIFY_FAIL: If Jobber should notify on failure. Values: `true`, `false`. Default is `false`
+* JOB_TIME: The cron schedule for the job. See [Documentation](https://dshearer.github.io/jobber/doc/v1.4/#time-strings)
+* JOB_ON_ERROR: How Jobber should act on errors. Values: Stop, Backoff, Continue (Default). See [Documentation](https://dshearer.github.io/jobber/doc/v1.4/#error-handling)
 
 Full example:
 
@@ -69,8 +67,6 @@ $ docker run -d \
     -e "JOB_COMMAND1=echo hello world" \
     -e "JOB_TIME1=1" \
     -e "JOB_ON_ERROR1=Backoff" \
-    -e "JOB_NOTIFY_ERR1=true" \
-    -e "JOB_NOTIFY_FAIL1=true" \
     ckotte/jobber
 ~~~~
 

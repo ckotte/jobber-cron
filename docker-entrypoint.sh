@@ -3,16 +3,37 @@
 set -o errexit
 
 if [ "$EUID" -eq 0 ]; then
+  # Jobber files
   configfile="/root/.jobber"
+  logfile="/var/log/jobber.log"
+  run_logfile="/var/log/jobber-runs.log"
 else
+  # Jobber files
   configfile="/home/$(whoami)/.jobber"
+  logfile="/home/$(whoami)/.jobber.log"
+  run_logfile="/home/$(whoami)/.jobber-runs.log"
 fi
 
 if [ ! -f "${configfile}" ]; then
   touch ${configfile}
 
+  # Set jobfile version and configure logging
+  cat > ${configfile} <<_EOF_
+version: 1.4
+
+prefs:
+  logPath: ${logfile}
+  runLog:
+    type: file
+    path: ${run_logfile}
+    maxFileLen: 100m
+    maxHistories: 2
+
+_EOF_
+
+  # Configure jobs
   cat >> ${configfile} <<_EOF_
-[jobs]
+jobs:
 _EOF_
   for (( i = 1; ; i++ ))
   do
@@ -35,12 +56,10 @@ _EOF_
     it_job_notify_failure=${!VAR_JOB_NOTIFY_FAIL:-"false"}
 
     cat >> ${configfile} <<_EOF_
-- name: ${it_job_name}
-  cmd: ${it_job_command}
-  time: '${it_job_time}'
-  onError: ${it_job_on_error}
-  notifyOnError: ${it_job_notify_error}
-  notifyOnFailure: ${it_job_notify_failure}
+  ${it_job_name}:
+    cmd: ${it_job_command}
+    time: '${it_job_time}'
+    onError: ${it_job_on_error}
 _EOF_
   done
 fi
