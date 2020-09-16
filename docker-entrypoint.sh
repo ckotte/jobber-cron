@@ -12,14 +12,15 @@ if [ "$EUID" -eq 0 ]; then
   ssmtp_aliasfile="/root/.msmtp_aliases"
   ssmtp_logfile="/var/log/msmtp.log"
 else
+  mkdir "/home/$(whoami)/log"
   # Jobber files
   configfile="/home/$(whoami)/.jobber"
-  logfile="/home/$(whoami)/.jobber.log"
-  run_logfile="/home/$(whoami)/.jobber-runs.log"
+  logfile="/home/$(whoami)/log/jobber.log"
+  run_logfile="/home/$(whoami)/log/jobber-runs.log"
   # ssmtp files
   ssmtp_configfile="/home/$(whoami)/.msmtprc"
   ssmtp_aliasfile="/home/$(whoami)/.msmtp_aliases"
-  ssmtp_logfile="/home/$(whoami)/.msmtp.log"
+  ssmtp_logfile="/home/$(whoami)/log/msmtp.log"
 fi
 
 # Configure msmtp
