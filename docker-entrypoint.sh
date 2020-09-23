@@ -113,21 +113,21 @@ _EOF_
     cat >> ${configfile} <<_EOF_
     notifyOnSuccess:
       - type: program
-        path: /usr/local/bin/send_email.sh
+        path: /usr/local/bin/send_jobber_email.sh
 _EOF_
   fi
   if [ "${it_job_notify_error}" = "true" ]; then
     cat >> ${configfile} <<_EOF_
     notifyOnError:
       - type: program
-        path: /usr/local/bin/send_email.sh
+        path: /usr/local/bin/send_jobber_email.sh
 _EOF_
   fi
   if [ "${it_job_notify_failure}" = "true" ]; then
     cat >> ${configfile} <<_EOF_
     notifyOnFailure:
       - type: program
-        path: /usr/local/bin/send_email.sh
+        path: /usr/local/bin/send_jobber_email.sh
 _EOF_
   fi
   done
