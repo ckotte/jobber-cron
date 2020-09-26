@@ -56,6 +56,7 @@ You can define the following global variables if Jobber should send an email aft
 * MAIL_SERVER_PORT: The mail server port.
 * MAIL_ADDRESS: The email address used to login and send emails.
 * MAIL_PASSWORD: The password used to login.
+* MAIL_FROM_NAME: Specify the name in the from field. Values: any text or `hostname` to use the hostname variable. Default is `jobber`.
 
 Note: TLS is enabled by default and cannot be disabled.
 
@@ -78,6 +79,7 @@ $ docker run -d \
     -e "MAIL_SERVER_PORT=587" \
     -e "MAIL_ADDRESS=some.email.address@gmx.de" \
     -e "MAIL_PASSWORD=Secr3tPassw0rd" \
+    -e "MAIL_FROM_NAME=hostname" \
     -e "JOB_NAME1=TestEcho" \
     -e "JOB_COMMAND1=echo hello world" \
     -e "JOB_TIME1=1" \

@@ -41,10 +41,20 @@ else
   fi
 fi
 
+if [ -n "${MAIL_FROM_NAME}" ]; then
+  if [ "${MAIL_FROM_NAME}" = "hostname" ]; then
+    FROM="${HOSTNAME} <${MAIL_ADDRESS}>"
+  else
+    FROM="${MAIL_FROM_NAME} <${MAIL_ADDRESS}>"
+  fi
+else
+  FROM="jobber <${MAIL_ADDRESS}>"
+fi
+
 json=$(echo "$stdin" | python3 -m json.tool)
 sendmail ${MAIL_ADDRESS} <<MAIL_END
 Subject: ${subject}
-From: jobber <${MAIL_ADDRESS}>
+From: ${FROM}
 
 $text
 
