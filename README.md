@@ -133,6 +133,18 @@ As a reminder, cron timetable is like follows:
 1. Token: Month
 1. Token: Day of Week
 
+# Send Email Script
+
+Jobs can use the embedded script /usr/local/bin/send_email.sh to send custom HTML emails. The script uses the global email variables and it provides a few parameters to compose the email. Execute ```/usr/local/bin/send_email.sh -h``` for more details.
+
+Example:
+
+~~~~
+/usr/local/bin/send_email.sh -s "Test" -b "<b>This is a test</b>"
+~~~~
+
+> Will send a test email to the configured email address.
+
 # References
 
 * [Jobber](https://github.com/dshearer/jobber)

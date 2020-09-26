@@ -59,6 +59,7 @@ LABEL com.opencontainers.application.jobber.version=$JOBBER_VERSION \
       com.opencontainers.image.builddate.jobber=${BUILD_DATE}
 
 COPY send_jobber_email.sh /usr/local/bin/send_jobber_email.sh
+COPY send_email.sh /usr/local/bin/send_email.sh
 
 COPY docker-entrypoint.sh /opt/jobber/docker-entrypoint.sh
 ENTRYPOINT ["/sbin/tini","--","/opt/jobber/docker-entrypoint.sh"]
