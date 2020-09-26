@@ -21,7 +21,8 @@ RUN apk add --update \
       libpq \
       postgresql \
       git \
-      mercurial && \
+      mercurial \
+      rclone && \
     # Keep only psql, pg_dump, and pg_restore
     cp /usr/bin/psql /usr/local/bin && \
     cp /usr/bin/pg_dump /usr/local/bin && \
