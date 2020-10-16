@@ -4,7 +4,8 @@
 
 [[ ${DEBUG} == true ]] && set -x
 
-read stdin
+# use -r to not interprete <backslash> caracters
+read -r stdin
 
 # {
 #     "job": {
